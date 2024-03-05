@@ -46,6 +46,8 @@ module ShopifyApp
           webhook_path = path(attributes)
           delivery_method = attributes[:delivery_method] || :http
 
+          puts "***** #{webhook_path}"
+
           ShopifyAPI::Webhooks::Registry.add_registration(
             topic: attributes[:topic],
             delivery_method: delivery_method,
